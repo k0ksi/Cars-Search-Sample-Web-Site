@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CarsSearch.Web;
-using CarsSearch.Web.Controllers;
-
-namespace CarsSearch.Tests.Controllers
+﻿namespace CarsSearch.Tests.Controllers
 {
+    using System.Web.Mvc;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Web.Controllers;
+
     [TestClass]
     public class HomeControllerTest
     {

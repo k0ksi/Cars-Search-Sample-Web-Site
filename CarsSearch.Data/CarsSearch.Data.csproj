@@ -58,8 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarsSearchDbContext.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ICarsSearchDbContext.cs" />
+    <Compile Include="Migrations\CartSearchDbConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="UnitOfWork\CartSearchData.cs" />
+    <Compile Include="UnitOfWork\ICartSearchData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -71,6 +76,7 @@
       <Name>CarsSearch.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
