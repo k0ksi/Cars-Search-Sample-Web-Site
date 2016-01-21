@@ -35,6 +35,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -93,6 +97,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CarsSearch.Data\CarsSearch.Data.csproj">
+      <Project>{6CCA577E-27CD-45B9-B4B3-120E86EBF6C8}</Project>
+      <Name>CarsSearch.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarsSearch.Models\CarsSearch.Models.csproj">
+      <Project>{3B4B073C-64BB-488E-905E-59577A923F59}</Project>
+      <Name>CarsSearch.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CarsSearch.Web\CarsSearch.Web.csproj">
       <Project>{82A6C6BC-333D-485F-8739-0A0FC946F826}</Project>
       <Name>CarsSearch.Web</Name>
