@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSearch.Data", "CarsSear
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsSearch.Models", "CarsSearch.Models\CarsSearch.Models.csproj", "{3B4B073C-64BB-488E-905E-59577A923F59}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Libraries", "External Libraries", "{B806DD10-9559-4A96-A78A-804236FADA33}"
+	ProjectSection(SolutionItems) = preProject
+		External Libraries\System.Web.Mvc.Expressions.dll = External Libraries\System.Web.Mvc.Expressions.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

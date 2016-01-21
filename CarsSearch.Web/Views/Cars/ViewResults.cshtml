@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CarsSearch.Web.Models.ViewModels.CarViewModel>
+
+<br/>
+<div class="container">
+    <h3>Мечтани автомобили</h3>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Марка</th>
+            <th>Година</th>
+            <th>Мощност</th>
+            <th>Вносител</th>
+            <th>Описание</th>
+        </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayFor(x => Model)
+        </tbody>
+    </table>
+</div>

@@ -3,7 +3,7 @@
     using Models;
     using Repositories;
 
-    public interface ICartSearchData
+    public interface ICarsSearchData
     {
         IRepository<User> Users { get; } 
 

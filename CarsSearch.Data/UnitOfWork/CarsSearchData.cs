@@ -5,12 +5,12 @@
     using Models;
     using Repositories;
 
-    public class CartSearchData : ICartSearchData
+    public class CarsSearchData : ICarsSearchData
     {
         private ICarsSearchDbContext context;
         private IDictionary<Type, object> repositories;
 
-        public CartSearchData(ICarsSearchDbContext context)
+        public CarsSearchData(ICarsSearchDbContext context)
         {
             this.context = context;
             this.repositories = new Dictionary<Type, object>();

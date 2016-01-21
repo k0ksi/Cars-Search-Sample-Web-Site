@@ -5,9 +5,9 @@ namespace CarsSearch.Data.Migrations
     using System.Linq;
     using Models;
 
-    public sealed class CartSearchDbConfiguration : DbMigrationsConfiguration<CarsSearchDbContext>
+    public sealed class CarsSearchDbConfiguration : DbMigrationsConfiguration<CarsSearchDbContext>
     {
-        public CartSearchDbConfiguration()
+        public CarsSearchDbConfiguration()
         {
             this.AutomaticMigrationsEnabled = true;
             this.AutomaticMigrationDataLossAllowed = true;

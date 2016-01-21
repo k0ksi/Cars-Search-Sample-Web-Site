@@ -1,0 +1,29 @@
+﻿@model CarsSearch.Web.Models.BingindModels.SearchBindingModel
+
+@{
+    ViewBag.Title = "Намери твоят мечтан автомобил";
+}
+
+@using (Html.BeginForm("Search", "Cars", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+    <h3>Намери твоят мечтан автомобил</h3>
+    @Html.ValidationSummary("", new {@class = "text-danger"})
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImporterId, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.ImporterId, (IEnumerable<SelectListItem>) this.ViewBag.Importers, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Description, new {@class = "form-control max-width"})
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-success" value="Търси" />
+        </div>
+    </div>
+}
