@@ -70,7 +70,7 @@
         [HttpGet]
         public ActionResult Search()
         {
-            this.LoadImporters();
+            this.LoadImportersWithEmptyFirstField();
 
             return this.View();
         }
@@ -85,13 +85,17 @@
                 searchResults = new HashSet<CarViewModel>();
 
                 var cars = this.Data.Cars
-                    .All()
-                    .Where(x => x.ImporterId == model.ImporterId);
-                    
+                    .All();
+
+                if (model.ImporterId != 0)
+                {
+                    cars = cars
+                        .Where(x => x.ImporterId == model.ImporterId);
+                }
 
                 if (!string.IsNullOrEmpty(model.Description))
                 {
-                    cars =  cars.Where(x => x.Description.ToLower().Contains(model.Description.ToLower()));
+                    cars = cars.Where(x => x.Description.ToLower().Contains(model.Description.ToLower()));
                 }
 
                 var results = cars.OrderBy(x => x.YearManufactured)
@@ -107,12 +111,12 @@
             }
 
             this.LoadBrands();
-            this.LoadImporters();
+            this.LoadImportersWithEmptyFirstField();
 
             return this.View(model);
         }
 
-        private IQueryable<SelectListItem> LoadImporters()
+        private IEnumerable<SelectListItem> LoadImporters()
         {
             var importers = this.Data.Importers
                 .All()
@@ -120,8 +124,32 @@
                 {
                     Value = x.Id.ToString(),
                     Text = x.Name
-                });
+                })
+                .ToList();
+            
             this.ViewBag.Importers = importers;
+
+            return importers;
+        }
+
+        private IEnumerable<SelectListItem> LoadImportersWithEmptyFirstField()
+        {
+            var importers = this.Data.Importers
+                .All()
+                .Select(x => new SelectListItem()
+                {
+                    Value = x.Id.ToString(),
+                    Text = x.Name
+                })
+                .ToList();
+
+            importers.Add(new SelectListItem()
+            {
+                Value = "0",
+                Text = ""
+            });
+            importers.Reverse();
+            this.ViewBag.ImportersWithEmpty = importers;
 
             return importers;
         }

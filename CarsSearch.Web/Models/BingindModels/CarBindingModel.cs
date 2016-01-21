@@ -17,6 +17,7 @@
         [Display(Name = "Мощност")]
         public double HorsePower { get; set; }
 
+        [Required(ErrorMessage = "Полето вносител е задължително.")]
         [Display(Name = "Вносител")]
         public int ImporterId { get; set; }
 
